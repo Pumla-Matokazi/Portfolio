@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pumla Matokazi — Cloud & Software Engineer based in Cape Town. Graduating WeThinkCode_ May 2026." />
+  <title>Pumla Matokazi — Cloud & Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">Pumla<span>.</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-avail"><span class="ndot"></span>Available May 2026</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-left">
+      <div class="hero-tag"><span class="tag-bracket"></span> Full-Stack Software Engineer &amp; Cloud Engineer <span class="tag-bracket"></span></div>
+      <h1>Hi, I'm Pumla<br><span class="name-accent">Matokazi.</span></h1>
+      <h2>I build things that <span class="typed-text"></span><span class="cursor-blink">|</span></h2>
+      <p>Final-year Software Engineering student at WeThinkCode_ — building full-stack apps, serverless AWS systems, and containerised backends. Based in Cape Town. Graduating May 2026.</p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="scrollTo('projects')">
+          View My Work
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="btn-outline" onclick="scrollTo('contact')">Get In Touch</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Projects Built</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">AWS</span><span class="stat-label">Serverless</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">May '26</span><span class="stat-label">Graduating</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!--
+        REPLACE WITH YOUR PHOTO:
+        Save your photo as: assets/images/pumla.jpg
+        Then replace the avatar-placeholder div with:
+        <img src="assets/images/pumla.jpg" alt="Pumla Matokazi" />
+      -->
+      <div class="avatar-ring">
+        <div class="avatar-placeholder">PM</div>
+        <div class="orbit-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">// about</div>
+    <h2>About Me</h2>
+    <div class="about">
+      <div class="about-text">
+        <p>I'm a final-year Software Engineering student at <strong>WeThinkCode_</strong> (NQF 6, graduating May 2026), based in Cape Town. I specialise in <strong>backend systems, REST APIs, and cloud-deployed applications</strong> on AWS.</p>
+        <p>Before software engineering, I spent 3 years at Tenacity Financial Services in data capture — which gave me a sharp eye for data integrity, accuracy, and process improvement. I bring that same rigour to my code.</p>
+        <p>I care about building tech that matters. My project KasiBridge was built to improve <strong>financial access for underserved communities</strong> in South Africa.</p>
+        <a href="assets/pumla-matokazi-cv.pdf" class="cv-link" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download CV
+        </a>
+      </div>
+      <div class="skills-wrap">
+        <h3>Technical Skills</h3>
+        <div class="skills">
+          <div class="skill"><span>Python</span></div>
+          <div class="skill"><span>Java</span></div>
+          <div class="skill"><span>JavaScript</span></div>
+          <div class="skill"><span>SQL</span></div>
+          <div class="skill"><span>AWS Lambda</span></div>
+          <div class="skill"><span>AWS S3</span></div>
+          <div class="skill"><span>Docker</span></div>
+          <div class="skill"><span>Node.js</span></div>
+          <div class="skill"><span>CI/CD</span></div>
+          <div class="skill"><span>REST APIs</span></div>
+          <div class="skill"><span>Git</span></div>
+          <div class="skill"><span>Linux</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section-alt">
+    <div class="section-label">// projects</div>
+    <h2>Selected Work</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img class="project-gif" src="assets/images/kasibridge.gif" data-static="assets/images/kasibridge-static.png" alt="KasiBridge mobile banking app demo" />
+        <div class="content">
+          <span class="project-badge badge-done">● Completed</span>
+          <h3>KasiBridge — Mobile Banking App</h3>
+          <p>Mobile-friendly banking app for deposits, withdrawals &amp; bill payments. Built for financial inclusion in underserved South African communities, with secure multi-step transaction validation.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
+          </div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener" class="link-demo">Live Demo ↗</a>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener" class="link-github">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img class="project-gif" src="assets/images/chatbot.gif" data-static="assets/images/chatbot-static.png" alt="Mental Health Chatbot demo" />
+        <div class="content">
+          <span class="project-badge badge-done">● Completed</span>
+          <h3>Mental Health Chatbot</h3>
+          <p>Serverless chatbot for mood tracking and personalised mental health support. Delivers coping resources based on user input. Fully deployed on AWS Lambda &amp; S3 — zero servers managed.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">AWS Lambda</span><span class="tag">AWS S3</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
+          </div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener" class="link-demo">Live Demo ↗</a>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener" class="link-github">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img class="project-gif" src="assets/images/dashboard.gif" data-static="assets/images/dashboard-static.png" alt="Internal Reporting Dashboard demo" />
+        <div class="content">
+          <span class="project-badge badge-wip">◌ In Progress</span>
+          <h3>Internal Reporting Dashboard</h3>
+          <p>Modernising a legacy system into a modular, containerised architecture. REST APIs for real-time reporting, Docker containerisation, and a full CI/CD pipeline with automated testing.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">REST API</span><span class="tag">Java</span>
+          </div>
+          <div class="links">
+            <a href="#" class="link-demo" style="opacity:0.4;pointer-events:none;">Preview Soon</a>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener" class="link-github">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">// experience</div>
+    <h2>Experience &amp; Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Project Administrator (Volunteer)</h3>
+        <div class="period">WeThinkCode_ · Feb 2025 — Present · Cape Town</div>
+        <ul>
+          <li>Tracked student hours, attendance, and participation across cohorts</li>
+          <li>Maintained reports and records for programme coordinators</li>
+          <li>Supported dashboards and logistics for the programme</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h3>Diploma in Software Engineering (NQF 6)</h3>
+        <div class="period">WeThinkCode_ · 2021 — May 2026 · Cape Town</div>
+        <ul>
+          <li>Cloud Engineering elective: AWS Foundations, Lambda &amp; S3 serverless deployment</li>
+          <li>Full-stack development, collaborative Agile team projects</li>
+          <li>Key projects: KasiBridge, Mental Health Chatbot, Reporting Dashboard</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h3>Data Capture</h3>
+        <div class="period">Tenacity Financial Services · Oct 2021 — Sep 2024 · Cape Town</div>
+        <ul>
+          <li>Captured and verified financial data accurately and efficiently</li>
+          <li>Maintained data integrity and compliance standards</li>
+          <li>Improved workflow processes, reducing input errors</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-alt">
+    <div class="section-label">// contact</div>
+    <h2>Get In Touch</h2>
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h3>Open to opportunities</h3>
+        <p>I'm actively looking for <strong>graduate roles and internships</strong> in backend and cloud engineering. If you have a role in mind or just want to connect — reach out.</p>
+        <div class="contact-details">
+          <a href="mailto:pumlamatokazi@gmail.com"><span class="icon">✉</span>pumlamatokazi@gmail.com</a>
+          <a href="tel:+27717666565"><span class="icon">📞</span>+27 71 766 6565</a>
+          <a href="https://linkedin.com/in/pumlamatokazi" target="_blank" rel="noopener"><span class="icon">in</span>linkedin.com/in/pumlamatokazi</a>
+          <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener"><span class="icon">gh</span>github.com/Pumla-Matokazi</a>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form id="contactForm">
+          <input type="text" id="from_name" name="from_name" placeholder="Your name" required />
+          <input type="email" id="from_email" name="from_email" placeholder="Your email" required />
+          <textarea id="message" name="message" placeholder="Your message..."></textarea>
+          <button type="submit" id="submitBtn">
+            <span id="btnText">Send Message</span>
+            <span id="btnLoading" style="display:none">Sending…</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Built by <span class="accent">Pumla Matokazi</span> · Cape Town · 2025</span>
+    <span class="avail">Available May 2026</span>
+  </footer>
+
+  <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" aria-label="Scroll to top">↑</button>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
