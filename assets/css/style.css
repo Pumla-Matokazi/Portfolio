@@ -425,3 +425,37 @@ footer .avail { color: var(--green); }
     font-size: 2.2rem;
   }
 }
+
+.skills-row {
+  display: flex;
+  gap: 3rem; /* spacing between categories */
+  flex-wrap: wrap; /* responsive for mobile */
+  justify-content: center;
+}
+
+.skill-category {
+  text-align: center;
+}
+
+.skill-category h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.skills-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skills-icons img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.skills-icons img:hover {
+  transform: scale(1.2); /* subtle hover effect */
+}
