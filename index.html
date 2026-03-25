@@ -4,14 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Pumla Matokazi — Software Engineer building impactful systems and applications." />
-  <title>Pumla Matokazi-Software Engineer</title>
-
+  <title>Pumla Matokazi — Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <!-- ✅ Proper CSS link -->
   <link rel="stylesheet" href="assets/css/style.css" />
-
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
@@ -21,7 +17,6 @@
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
-
     <div class="nav-links" id="navLinks">
       <a href="#skills">Tech Stack</a>
       <a href="#projects">Projects</a>
@@ -29,40 +24,25 @@
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
-
     <div class="nav-avail"><span class="ndot"></span>Available May 2026</div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-grid-bg"></div>
-
+    <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="hero-left">
-      <div class="hero-tag">Software Engineer | Systems, Data & Cloud</div>
-
+      <div class="hero-tag">Software Engineer | Systems, Data &amp; Cloud</div>
       <h1>Hi, I'm Pumla Matokazi 👋</h1>
-
-      <h2>
-        I build things that 
-        <span class="typed-text"></span>
-        <span class="cursor-blink">|</span>
-      </h2>
-
-      <p>
-        I design and build software that solves real-world problems.  
-        My work spans systems, data, and user-facing applications, with a focus on reliability, scalability, and impact.
-      </p>
-
+      <h2>I build things that <span class="typed-text"></span><span class="cursor-blink">|</span></h2>
+      <p>I design and build software that solves real-world problems across user-facing applications, backend systems, data, and cloud environments. My approach focuses on clarity, reliability, and creating systems people can depend on.</p>
       <div class="hero-ctas">
         <button class="btn-primary" onclick="scrollTo('projects')">
           View My Work
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
-        <button class="btn-outline" onclick="scrollTo('contact')">
-          Get In Touch
-        </button>
+        <button class="btn-outline" onclick="scrollTo('contact')">Get In Touch</button>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="avatar-ring">
         <div class="avatar-placeholder">PM</div>
@@ -70,116 +50,188 @@
     </div>
   </section>
 
-<section id="skills">
-  <div class="section-label">// skills</div>
-  <h2>Technical Skills</h2>
-
-  <!-- Front-end -->
-  <div class="skill-category">
-    <h3>Front-end</h3>
-    <div class="skills-icons">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
-    </div>
-  </div>
-
-  <!-- Back-end -->
-  <div class="skill-category">
-    <h3>Back-end</h3>
-    <div class="skills-icons">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js" />
-    </div>
-  </div>
-
-  <!-- Data -->
-  <div class="skill-category">
-    <h3>Data</h3>
-    <div class="skills-icons">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" title="SQL" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL" />
-    </div>
-  </div>
-
-  <!-- Cloud & DevOps -->
-  <div class="skill-category">
-    <h3>Cloud & DevOps</h3>
-    <div class="skills-icons">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" title="AWS" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" />
-    </div>
-  </div>
-</section>
-
-  </div>
-</section>
-
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-row">
+      <div class="skill-category">
+        <h3>Front-end</h3>
+        <div class="skills-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Back-end</h3>
+        <div class="skills-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Data</h3>
+        <div class="skills-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Cloud</h3>
+        <div class="skills-icons">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="section-alt">
-    <div class="section-label">// projects</div>
     <h2>Selected Work</h2>
-
     <div class="projects-grid">
-      <!-- Keep your existing project cards -->
+
+      <div class="project-card">
+        <img class="project-gif" src="assets/images/kasibridge.gif" data-static="assets/images/kasibridge-static.png" alt="KasiBridge demo" />
+        <div class="content">
+          <span class="project-badge badge-done">● Completed</span>
+          <h3>KasiBridge — Mobile Banking App</h3>
+          <p>Mobile-friendly banking app for deposits, withdrawals &amp; bill payments. Built for financial inclusion in underserved South African communities, with secure multi-step transaction validation.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
+          </div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Live Demo ↗</a>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img class="project-gif" src="assets/images/chatbot.gif" data-static="assets/images/chatbot-static.png" alt="Mental Health Chatbot demo" />
+        <div class="content">
+          <span class="project-badge badge-done">● Completed</span>
+          <h3>Mental Health Chatbot</h3>
+          <p>Serverless chatbot for mood tracking and personalised mental health support. Fully deployed on AWS Lambda &amp; S3 — zero servers managed.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">AWS Lambda</span><span class="tag">AWS S3</span><span class="tag">JavaScript</span>
+          </div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">Live Demo ↗</a>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img class="project-gif" src="assets/images/dashboard.gif" data-static="assets/images/dashboard-static.png" alt="Reporting Dashboard demo" />
+        <div class="content">
+          <span class="project-badge badge-wip">◌ In Progress</span>
+          <h3>Internal Reporting Dashboard</h3>
+          <p>Modernising a legacy system into a modular, containerised architecture with REST APIs, Docker, and a full CI/CD pipeline.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">REST API</span>
+          </div>
+          <div class="links">
+            <a href="#" style="opacity:0.4;pointer-events:none;">Preview Soon</a>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section-alt">
-    <div class="section-label">// experience</div>
+  <!-- WORK EXPERIENCE -->
+  <section id="experience">
     <h2>Work Experience</h2>
-
     <div class="timeline">
-      <!-- Your experience here -->
+
+      <div class="timeline-item">
+        <h3>Project Administrator (Volunteer)</h3>
+        <div class="period">WeThinkCode_ · Feb 2025 — Present · Cape Town</div>
+        <ul>
+          <li>Tracked student hours, attendance, and participation across cohorts.</li>
+          <li>Maintained structured reports and records for programme coordination.</li>
+          <li>Supported internal dashboards and operational logistics.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Data Capture</h3>
+        <div class="period">Tenacity Financial Services · Oct 2021 — Sep 2024 · Cape Town</div>
+        <ul>
+          <li>Captured and verified financial data with high accuracy.</li>
+          <li>Maintained strong data integrity and compliance standards.</li>
+          <li>Improved workflow processes, reducing input errors.</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
   <!-- EDUCATION -->
-  <section id="education">
-    <div class="section-label">// education</div>
+  <section id="education" class="section-alt">
     <h2>Education</h2>
-
     <div class="timeline">
+
       <div class="timeline-item">
-        <h3>Diploma in Software Engineering</h3>
-        <div class="period">WeThinkCode_ · 2021 — May 2026</div>
+        <h3>Diploma in Software Engineering (NQF 6)</h3>
+        <div class="period">WeThinkCode_ · 2021 — May 2026 · Cape Town</div>
+        <ul>
+          <li>Cloud Engineering elective: AWS Foundations, Lambda &amp; S3 serverless deployment</li>
+          <li>Full-stack development, collaborative Agile team projects</li>
+          <li>Key projects: KasiBridge, Mental Health Chatbot, Reporting Dashboard</li>
+        </ul>
+        <div class="edu-badges">
+          <span class="edu-badge">NQF Level 6</span>
+          <span class="edu-badge">Cloud Engineering</span>
+          <span class="edu-badge">Agile</span>
+          <span class="edu-badge">Full-Stack</span>
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="section-label">// contact</div>
     <h2>Get In Touch</h2>
-
     <div class="contact-inner">
       <div class="contact-left">
         <h3>Open to opportunities</h3>
-        <p>
-          I'm open to software engineering roles and opportunities.
-          Feel free to reach out if you'd like to connect.
-        </p>
-
+        <p>I'm actively looking for <strong>graduate roles and internships</strong> in backend and cloud engineering. If you have a role in mind or just want to connect — reach out.</p>
         <div class="contact-details">
-          <a href="mailto:pumlamatokazi@gmail.com">pumlamatokazi@gmail.com</a>
-          <a href="tel:+27717666565">+27 71 766 6565</a>
-          <a href="https://linkedin.com/in/pumlamatokazi" target="_blank">LinkedIn</a>
-          <a href="https://github.com/Pumla-Matokazi" target="_blank">GitHub</a>
+          <a href="mailto:pumlamatokazi@gmail.com"><span class="icon">✉</span>pumlamatokazi@gmail.com</a>
+          <a href="tel:+27717666565"><span class="icon">📞</span>+27 71 766 6565</a>
+          <a href="https://linkedin.com/in/pumlamatokazi" target="_blank" rel="noopener"><span class="icon">in</span>linkedin.com/in/pumlamatokazi</a>
+          <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener"><span class="icon">gh</span>github.com/Pumla-Matokazi</a>
         </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form id="contactForm">
+          <input type="text" id="from_name" name="from_name" placeholder="Your name" required />
+          <input type="email" id="from_email" name="from_email" placeholder="Your email" required />
+          <textarea id="message" name="message" placeholder="Your message..."></textarea>
+          <button type="submit" id="submitBtn">
+            <span id="btnText">Send Message</span>
+            <span id="btnLoading" style="display:none">Sending…</span>
+          </button>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <span>Built by Pumla Matokazi · 2025</span>
+    <span>Built by <span class="accent">Pumla Matokazi</span> · Cape Town · 2025</span>
+    <span class="avail">Available May 2026</span>
   </footer>
+
+  <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" aria-label="Scroll to top">↑</button>
+  <div id="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/js/main.js"></script>
 </body>
