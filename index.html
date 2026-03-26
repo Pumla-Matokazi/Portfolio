@@ -4,8 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Pumla Matokazi — Software Engineer building impactful systems and applications." />
+  <meta name="author" content="Pumla Matokazi" />
   <title>Pumla Matokazi — Software Engineer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍💻</text></svg>">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -18,34 +24,38 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="#skills">Tech Stack</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+      <a href="#skills" class="nav-link">Tech Stack</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
-    <div class="nav-avail"><span class="ndot"></span>Available May 2026</div>
+    <div class="nav-avail"><span class="ndot"></span>Open to Opportunities</div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-grid-bg" aria-hidden="true"></div>
+
+    <!-- IMAGE LEFT -->
+    <div class="hero-right">
+      <div class="avatar-ring">
+        <div class="avatar-placeholder" aria-label="Pumla Matokazi avatar">PM</div>
+      </div>
+    </div>
+
+    <!-- CONTENT RIGHT -->
     <div class="hero-left">
       <div class="hero-tag">Software Engineer | Systems, Data &amp; Cloud</div>
       <h1>Hi, I'm Pumla Matokazi 👋</h1>
       <h2>I build things that <span class="typed-text"></span><span class="cursor-blink">|</span></h2>
       <p>I design and build software that solves real-world problems across user-facing applications, backend systems, data, and cloud environments. My approach focuses on clarity, reliability, and creating systems people can depend on.</p>
       <div class="hero-ctas">
-        <button class="btn-primary" onclick="scrollTo('projects')">
+        <button class="btn-primary" onclick="scrollToSection('projects')">
           View My Work
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
-        <button class="btn-outline" onclick="scrollTo('contact')">Get In Touch</button>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="avatar-ring">
-        <div class="avatar-placeholder">PM</div>
+        <button class="btn-outline" onclick="scrollToSection('contact')">Get In Touch</button>
       </div>
     </div>
   </section>
@@ -53,38 +63,54 @@
   <!-- SKILLS -->
   <section id="skills">
     <h2>Technical Skills</h2>
-    <div class="skills-row">
-      <div class="skill-category">
-        <h3>Front-end</h3>
-        <div class="skills-icons">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+    <div class="skills-rows">
+
+      <div class="skill-row">
+        <div class="skill-row-label">Front-end</div>
+        <div class="skill-icons">
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div><div class="flip-back"><span>HTML</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"></div><div class="flip-back"><span>CSS</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></div><div class="flip-back"><span>JavaScript</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"></div><div class="flip-back"><span>TypeScript</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js"></div><div class="flip-back"><span>Vue.js</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"></div><div class="flip-back"><span>Tailwind</span></div></div></div>
         </div>
       </div>
-      <div class="skill-category">
-        <h3>Back-end</h3>
-        <div class="skills-icons">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+
+      <div class="skill-row">
+        <div class="skill-row-label">Back-end</div>
+        <div class="skill-icons">
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div><div class="flip-back"><span>Python</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"></div><div class="flip-back"><span>Java</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"></div><div class="flip-back"><span>Node.js</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go"></div><div class="flip-back"><span>Go</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"></div><div class="flip-back"><span>FastAPI</span></div></div></div>
         </div>
       </div>
-      <div class="skill-category">
-        <h3>Data</h3>
-        <div class="skills-icons">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+
+      <div class="skill-row">
+        <div class="skill-row-label">Data</div>
+        <div class="skill-icons">
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"></div><div class="flip-back"><span>MySQL</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"></div><div class="flip-back"><span>PostgreSQL</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"></div><div class="flip-back"><span>MongoDB</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"></div><div class="flip-back"><span>Redis</span></div></div></div>
         </div>
       </div>
-      <div class="skill-category">
-        <h3>Cloud</h3>
-        <div class="skills-icons">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+
+      <div class="skill-row">
+        <div class="skill-row-label">Cloud &amp; DevOps</div>
+        <div class="skill-icons">
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></div><div class="flip-back"><span>AWS</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure"></div><div class="flip-back"><span>Azure</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"></div><div class="flip-back"><span>Docker</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes"></div><div class="flip-back"><span>Kubernetes</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div><div class="flip-back"><span>Git</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></div><div class="flip-back"><span>GitHub</span></div></div></div>
+          <div class="flip-card"><div class="flip-inner"><div class="flip-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"></div><div class="flip-back"><span>Linux</span></div></div></div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -94,7 +120,9 @@
     <div class="projects-grid">
 
       <div class="project-card">
-        <img class="project-gif" src="assets/images/kasibridge.gif" data-static="assets/images/kasibridge-static.png" alt="KasiBridge demo" />
+        <div class="project-image-wrapper">
+          <img class="project-gif" src="assets/images/kasibridge.gif" data-static="assets/images/kasibridge-static.png" alt="KasiBridge mobile banking app interface" loading="lazy" />
+        </div>
         <div class="content">
           <span class="project-badge badge-done">● Completed</span>
           <h3>KasiBridge — Mobile Banking App</h3>
@@ -103,14 +131,16 @@
             <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
           </div>
           <div class="links">
-            <a href="#" target="_blank" rel="noopener">Live Demo ↗</a>
-            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="#" class="disabled-link" aria-disabled="true">Live Demo (Coming Soon) ↗</a>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <img class="project-gif" src="assets/images/chatbot.gif" data-static="assets/images/chatbot-static.png" alt="Mental Health Chatbot demo" />
+        <div class="project-image-wrapper">
+          <img class="project-gif" src="assets/images/chatbot.gif" data-static="assets/images/chatbot-static.png" alt="Mental health chatbot conversation interface" loading="lazy" />
+        </div>
         <div class="content">
           <span class="project-badge badge-done">● Completed</span>
           <h3>Mental Health Chatbot</h3>
@@ -119,14 +149,16 @@
             <span class="tag">Python</span><span class="tag">AWS Lambda</span><span class="tag">AWS S3</span><span class="tag">JavaScript</span>
           </div>
           <div class="links">
-            <a href="#" target="_blank" rel="noopener">Live Demo ↗</a>
-            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="#" class="disabled-link" aria-disabled="true">Live Demo (Coming Soon) ↗</a>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <img class="project-gif" src="assets/images/dashboard.gif" data-static="assets/images/dashboard-static.png" alt="Reporting Dashboard demo" />
+        <div class="project-image-wrapper">
+          <img class="project-gif" src="assets/images/dashboard.gif" data-static="assets/images/dashboard-static.png" alt="Reporting dashboard interface preview" loading="lazy" />
+        </div>
         <div class="content">
           <span class="project-badge badge-wip">◌ In Progress</span>
           <h3>Internal Reporting Dashboard</h3>
@@ -135,8 +167,8 @@
             <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">REST API</span>
           </div>
           <div class="links">
-            <a href="#" style="opacity:0.4;pointer-events:none;">Preview Soon</a>
-            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener">GitHub ↗</a>
+            <span class="disabled-link">Preview Soon</span>
+            <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
         </div>
       </div>
@@ -175,23 +207,135 @@
   <!-- EDUCATION -->
   <section id="education" class="section-alt">
     <h2>Education</h2>
-    <div class="timeline">
+    <div class="edu-card">
 
-      <div class="timeline-item">
-        <h3>Diploma in Software Engineering (NQF 6)</h3>
-        <div class="period">WeThinkCode_ · 2021 — May 2026 · Cape Town</div>
-        <ul>
-          <li>Cloud Engineering elective: AWS Foundations, Lambda &amp; S3 serverless deployment</li>
-          <li>Full-stack development, collaborative Agile team projects</li>
-          <li>Key projects: KasiBridge, Mental Health Chatbot, Reporting Dashboard</li>
-        </ul>
-        <div class="edu-badges">
-          <span class="edu-badge">NQF Level 6</span>
-          <span class="edu-badge">Cloud Engineering</span>
-          <span class="edu-badge">Agile</span>
-          <span class="edu-badge">Full-Stack</span>
+      <div class="edu-top">
+        <div>
+          <h3 class="edu-title">Software Engineering Diploma (NQF 6)</h3>
+          <div class="edu-meta">WeThinkCode_ · Cape Town, South Africa · 2021 – 2026</div>
         </div>
+        <span class="edu-badge">In progress — May 2026</span>
       </div>
+
+      <p class="edu-desc">Completed an intensive peer-to-peer software engineering programme with hands-on experience in Python, OOP, TDD, full-stack development, and data engineering. Built and delivered practical projects including CLI tools, data pipelines, and web applications while applying agile workflows, database management, and cloud-based solutions using AWS and GCP.</p>
+
+      <div class="edu-divider"></div>
+
+      <div class="edu-section-label">Modules Completed</div>
+      <div class="modules-grid">
+
+        <div class="module-card">
+          <div class="module-num">101</div>
+          <div class="module-name">Programming Fundamentals</div>
+          <div class="module-desc">Python-based introduction to variables, loops, data structures, functions, error handling, REST APIs, OAuth, and unit testing with TDD.</div>
+          <div class="module-tags">
+            <span class="mtag">Python</span><span class="mtag">TDD</span><span class="mtag">Git</span><span class="mtag">REST API</span><span class="mtag">OAuth</span>
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-num">102</div>
+          <div class="module-name">Object Oriented Programming</div>
+          <div class="module-desc">OOP principles in Java — encapsulation, inheritance, polymorphism, composition, network programming with sockets, and multi-threaded concurrency.</div>
+          <div class="module-tags">
+            <span class="mtag">Java</span><span class="mtag">OOP</span><span class="mtag">JUnit</span><span class="mtag">Maven</span><span class="mtag">Sockets</span>
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-num">201</div>
+          <div class="module-name">Brownfields Development</div>
+          <div class="module-desc">Refactoring and improving existing codebases using TDD, design patterns, SQL persistence, CI/CD pipelines, Docker, and trunk-based Git workflows.</div>
+          <div class="module-tags">
+            <span class="mtag">Refactoring</span><span class="mtag">SQL</span><span class="mtag">Docker</span><span class="mtag">CI/CD</span><span class="mtag">Design Patterns</span>
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-num">202</div>
+          <div class="module-name">Distributed Systems</div>
+          <div class="module-desc">Distributed architecture, API design, web development, async programming, Domain-Driven Design, and multi-team agile collaboration on cloud platforms.</div>
+          <div class="module-tags">
+            <span class="mtag">APIs</span><span class="mtag">DDD</span><span class="mtag">Async</span><span class="mtag">Cloud</span><span class="mtag">Web Dev</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="edu-divider"></div>
+
+      <div class="edu-section-label">Project Highlights</div>
+      <div class="edu-projects">
+
+        <div class="edu-project">
+          <div class="proj-dot"></div>
+          <div class="proj-content">
+            <div class="proj-name">Code Clinic Booking System</div>
+            <div class="proj-desc">CLI tool for scheduling and managing coding sessions via Google Calendar API — pipeline automation, output piping, and team collaboration across 3 two-week iterations.</div>
+          </div>
+        </div>
+
+        <div class="edu-project">
+          <div class="proj-dot"></div>
+          <div class="proj-content">
+            <div class="proj-name">RobotWorlds — Multiplayer Network Game</div>
+            <div class="proj-desc">Multi-user network-based game built in Java using OOP, client socket communication, and a multi-threaded server. Delivered with agile ceremonies including standups, showcases, and retros.</div>
+          </div>
+        </div>
+
+        <div class="edu-project">
+          <div class="proj-dot"></div>
+          <div class="proj-content">
+            <div class="proj-name">Number Series Analyser</div>
+            <div class="proj-desc">Python modules analysing numeric datasets without built-in functions — full OOP design, string manipulation, logical operations, and TDD coverage.</div>
+          </div>
+        </div>
+
+        <div class="edu-project">
+          <div class="proj-dot"></div>
+          <div class="proj-content">
+            <div class="proj-name">Data Engineering Projects</div>
+            <div class="proj-desc">Designed and maintained relational databases, built scalable data pipelines, cleaned and structured datasets, and prepared data for downstream analysis.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="proj-more">
+        <div class="proj-more-line"></div>
+        <span>+ more projects across all modules</span>
+        <div class="proj-more-line"></div>
+      </div>
+
+      <div class="edu-divider"></div>
+
+      <div class="edu-section-label">Key Skills</div>
+      <div class="edu-tags">
+        <span class="edu-tag highlight">Python</span>
+        <span class="edu-tag highlight">OOP</span>
+        <span class="edu-tag highlight">TDD</span>
+        <span class="edu-tag highlight">SQL</span>
+        <span class="edu-tag highlight">Data Engineering</span>
+        <span class="edu-tag highlight">CI/CD</span>
+        <span class="edu-tag">Java</span>
+        <span class="edu-tag">JavaScript</span>
+        <span class="edu-tag">Vue.js</span>
+        <span class="edu-tag">TypeScript</span>
+        <span class="edu-tag">Docker</span>
+        <span class="edu-tag">AWS / GCP</span>
+        <span class="edu-tag">REST APIs</span>
+        <span class="edu-tag">Git / GitLab</span>
+        <span class="edu-tag">Design Patterns</span>
+        <span class="edu-tag">Agile</span>
+        <span class="edu-tag">Data Modelling</span>
+        <span class="edu-tag">Distributed Systems</span>
+        <span class="edu-tag">Pair Programming</span>
+        <span class="edu-tag">Problem-Solving</span>
+      </div>
+
+     <!-- <div class="edu-outcome">
+        <strong>Outcome —</strong> Developed a strong foundation in software and data engineering through a peer-to-peer, project-based programme. Industry-ready in coding, testing, database management, cloud systems, agile delivery, and building scalable, maintainable solutions.
+      </div>-->
 
     </div>
   </section>
@@ -206,15 +350,15 @@
         <div class="contact-details">
           <a href="mailto:pumlamatokazi@gmail.com"><span class="icon">✉</span>pumlamatokazi@gmail.com</a>
           <a href="tel:+27717666565"><span class="icon">📞</span>+27 71 766 6565</a>
-          <a href="https://linkedin.com/in/pumlamatokazi" target="_blank" rel="noopener"><span class="icon">in</span>linkedin.com/in/pumlamatokazi</a>
-          <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener"><span class="icon">gh</span>github.com/Pumla-Matokazi</a>
+          <a href="https://linkedin.com/in/pumlamatokazi" target="_blank" rel="noopener noreferrer"><span class="icon">in</span>linkedin.com/in/pumlamatokazi</a>
+          <a href="https://github.com/Pumla-Matokazi" target="_blank" rel="noopener noreferrer"><span class="icon">gh</span>github.com/Pumla-Matokazi</a>
         </div>
       </div>
       <div class="contact-form-wrap">
         <form id="contactForm">
           <input type="text" id="from_name" name="from_name" placeholder="Your name" required />
           <input type="email" id="from_email" name="from_email" placeholder="Your email" required />
-          <textarea id="message" name="message" placeholder="Your message..."></textarea>
+          <textarea id="message" name="message" placeholder="Your message..." rows="5" required></textarea>
           <button type="submit" id="submitBtn">
             <span id="btnText">Send Message</span>
             <span id="btnLoading" style="display:none">Sending…</span>
@@ -227,7 +371,7 @@
   <!-- FOOTER -->
   <footer>
     <span>Built by <span class="accent">Pumla Matokazi</span> · Cape Town · 2025</span>
-    <span class="avail">Available May 2026</span>
+    <span class="avail">Open to Opportunities</span>
   </footer>
 
   <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" aria-label="Scroll to top">↑</button>
