@@ -579,7 +579,6 @@ nav.scrolled {
   height: 38px;
   object-fit: contain;
   transition: all 0.3s ease;
-  /* Ensure icons look good on white background */
   filter: brightness(1) contrast(1);
 }
 
@@ -608,7 +607,7 @@ nav.scrolled {
 }
 
 /* ================================================
-   PROJECTS - Glass Cards
+   PROJECTS - Glass Cards (WORKING VERSION)
 ================================================ */
 .projects-grid { 
   display: grid; 
@@ -648,6 +647,9 @@ nav.scrolled {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s;
+  opacity: 1;
+  visibility: visible;
+  display: block;
 }
 
 .project-card:hover .project-image-wrapper img {
@@ -735,7 +737,6 @@ nav.scrolled {
   transform: translateX(2px);
 }
 
-
 /* ================================================
    EXPERIENCE SECTION - Left Aligned Content
 ================================================ */
@@ -757,11 +758,10 @@ nav.scrolled {
   margin-top: 24px;
   position: relative;
   max-width: 900px;
-  margin-left: 0; /* Changed from auto to 0 - left align */
+  margin-left: 0;
   margin-right: auto;
 }
 
-/* Vertical line - adjusted for left alignment */
 #experience .timeline::before {
   content: '';
   position: absolute;
@@ -773,7 +773,6 @@ nav.scrolled {
   border-radius: 2px;
 }
 
-/* Timeline items - left aligned */
 #experience .timeline-item {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
@@ -853,7 +852,6 @@ nav.scrolled {
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   #experience .timeline {
     max-width: 100%;
@@ -901,7 +899,6 @@ nav.scrolled {
   margin-left: 0;
 }
 
-/* Timeline container for education */
 #education .timeline {
   display: flex;
   flex-direction: column;
@@ -913,7 +910,6 @@ nav.scrolled {
   margin-right: auto;
 }
 
-/* Vertical line connecting dots */
 #education .timeline::before {
   content: '';
   position: absolute;
@@ -925,7 +921,6 @@ nav.scrolled {
   border-radius: 2px;
 }
 
-/* Timeline items - matching experience section */
 #education .timeline-item {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
@@ -937,7 +932,6 @@ nav.scrolled {
   margin-left: 70px;
 }
 
-/* Connecting dot */
 #education .timeline-item::before {
   content: '';
   position: absolute;
@@ -1024,7 +1018,6 @@ nav.scrolled {
   text-align: left;
 }
 
-/* Module Cards Grid - Left Aligned */
 .modules-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1097,7 +1090,6 @@ nav.scrolled {
   color: var(--accent);
 }
 
-/* Project Highlights with Side Bullets */
 .edu-projects {
   display: flex;
   flex-direction: column;
@@ -1119,7 +1111,6 @@ nav.scrolled {
   transform: translateX(4px);
 }
 
-/* Side bullet styling - matching experience section */
 .proj-dot {
   width: 8px;
   height: 8px;
@@ -1155,7 +1146,6 @@ nav.scrolled {
   line-height: 1.7;
 }
 
-/* More Projects Row */
 .proj-more {
   display: flex;
   align-items: center;
@@ -1178,7 +1168,6 @@ nav.scrolled {
   white-space: nowrap;
 }
 
-/* Skills Tags */
 .edu-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1186,6 +1175,7 @@ nav.scrolled {
   margin-bottom: 32px;
   justify-content: flex-start;
 }
+
 
 .edu-tag {
   font-size: 0.75rem;
@@ -1195,152 +1185,11 @@ nav.scrolled {
   border: 1px solid rgba(0, 150, 255, 0.2);
   color: var(--muted);
   font-family: 'JetBrains Mono', monospace;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.edu-tag:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-  background: rgba(0, 200, 255, 0.05);
-}
-
-.edu-tag.highlight {
-  background: linear-gradient(135deg, rgba(0, 200, 255, 0.15), rgba(168, 85, 247, 0.1));
-  border-color: rgba(0, 200, 255, 0.4);
-  color: var(--accent);
-}
-
-.edu-tag.highlight:hover {
-  border-color: var(--secondary);
-  color: var(--secondary);
-  background: linear-gradient(135deg, rgba(0, 200, 255, 0.2), rgba(168, 85, 247, 0.15));
-}
-
-/* Outcome Block */
-.edu-outcome {
-  background: linear-gradient(135deg, rgba(0, 100, 255, 0.08), rgba(100, 50, 200, 0.05));
-  backdrop-filter: blur(8px);
-  border-radius: 16px;
-  padding: 24px 28px;
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.8;
-  border-left: 3px solid var(--accent);
-  margin-top: 8px;
-  position: relative;
-}
-
-.edu-outcome::before {
-  content: '▹';
-  position: absolute;
-  left: -20px;
-  top: 24px;
-  color: var(--accent);
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.edu-outcome:hover::before {
-  opacity: 1;
-}
-
-.edu-outcome strong {
-  color: var(--text);
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--accent), var(--secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Responsive Design for Education */
-@media (max-width: 768px) {
-  #education .timeline::before {
-    left: 20px;
-  }
-  
-  #education .timeline-item {
-    margin-left: 50px;
-    padding: 20px;
-  }
-  
-  #education .timeline-item::before {
-    left: -36px;
-    width: 14px;
-    height: 14px;
-  }
-  
-  .edu-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .modules-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .edu-tags {
-    gap: 8px;
-    justify-content: flex-start;
-  }
-  
-  .edu-tag {
-    font-size: 0.7rem;
-    padding: 4px 12px;
-  }
-  
-  .proj-more span {
-    font-size: 0.7rem;
-  }
-  
-  .edu-outcome {
-    padding: 20px;
-  }
-  
-  .edu-outcome::before {
-    left: -12px;
-  }
-}
-
-@media (max-width: 480px) {
-  #education .timeline-item {
-    margin-left: 40px;
-    padding: 16px;
-  }
-  
-  .edu-title {
-    font-size: 1.1rem;
-  }
-  
-  .module-card {
-    padding: 16px;
-  }
-  
-  .edu-project {
-    padding: 8px;
-  }
-}
-
-
-/* Ensure smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adds padding for fixed header */
-}
-
-/* Style buttons as links */
-.btn-primary, .btn-outline {
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
+  transition: all 0.
 }
 
 /* ================================================
-   CONTACT SECTION - Horizontally Aligned
+   CONTACT SECTION - Fixed
 ================================================ */
 #contact {
   padding: 80px 10%;
@@ -1362,7 +1211,7 @@ html {
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
   align-items: start;
 }
 
@@ -1390,17 +1239,11 @@ html {
   font-size: 0.95rem;
 }
 
-.contact-info > p strong {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* Contact Links - Same height as form */
+/* Contact Links */
 .contact-details {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 0;
 }
 
 .contact-link {
@@ -1410,12 +1253,10 @@ html {
   padding: 16px 20px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 150, 255, 0.15);
+  border: 1px solid rgba(0, 150, 255, 0.2);
   border-radius: 16px;
   text-decoration: none;
   transition: all 0.3s ease;
-  cursor: pointer;
-  min-height: 82px; /* Ensures consistent height with form inputs */
 }
 
 .contact-link:hover {
@@ -1425,7 +1266,6 @@ html {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Contact Icons */
 .contact-icon {
   width: 48px;
   height: 48px;
@@ -1434,7 +1274,6 @@ html {
   justify-content: center;
   background: rgba(0, 200, 255, 0.1);
   border-radius: 12px;
-  transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
@@ -1442,37 +1281,8 @@ html {
   width: 24px;
   height: 24px;
   stroke: var(--accent);
-  transition: all 0.3s ease;
 }
 
-.contact-link:hover .contact-icon {
-  background: rgba(0, 200, 255, 0.2);
-  transform: scale(1.05);
-}
-
-.contact-link:hover .contact-icon svg {
-  stroke: var(--secondary);
-  transform: scale(1.05);
-}
-
-/* Individual icon colors on hover */
-.email-icon:hover svg {
-  stroke: #ea4335;
-}
-
-.phone-icon:hover svg {
-  stroke: #34a853;
-}
-
-.linkedin-icon:hover svg {
-  stroke: #0a66c2;
-}
-
-.github-icon:hover svg {
-  stroke: #ffffff;
-}
-
-/* Contact Text */
 .contact-text {
   flex: 1;
 }
@@ -1491,8 +1301,6 @@ html {
   font-size: 0.9rem;
   color: var(--text);
   font-weight: 500;
-  transition: color 0.3s ease;
-  word-break: break-all;
 }
 
 .contact-link:hover .contact-value {
@@ -1523,17 +1331,14 @@ html {
   animation: pulse 2s infinite;
 }
 
-/* Right Side - Contact Form - Perfectly Aligned */
+/* Right Side - Contact Form */
 .contact-form-wrapper {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 150, 255, 0.15);
+  border: 1px solid rgba(0, 150, 255, 0.2);
   border-radius: 24px;
-  padding: 0;
+  padding: 32px;
   transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .contact-form-wrapper:hover {
@@ -1544,19 +1349,13 @@ html {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 32px;
-  height: 100%;
-}
-
-.form-group {
-  width: 100%;
+  gap: 20px;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 16px 18px;
+  padding: 14px 18px;
   background: rgba(10, 15, 31, 0.6);
   border: 1px solid rgba(0, 150, 255, 0.2);
   border-radius: 12px;
@@ -1565,16 +1364,6 @@ html {
   font-family: 'Space Grotesk', sans-serif;
   transition: all 0.3s ease;
   outline: none;
-}
-
-/* Match the height of contact cards */
-.form-group input {
-  min-height: 82px;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
 }
 
 .form-group input:focus,
@@ -1589,28 +1378,26 @@ html {
   color: var(--muted-light);
 }
 
-/* Submit Button */
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
 .submit-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 16px 28px;
+  padding: 14px 24px;
   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   border: none;
   border-radius: 40px;
   color: #0a0f1f;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-family: 'Space Grotesk', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
-  margin-top: 8px;
-}
-
-.submit-btn svg {
-  transition: transform 0.3s ease;
 }
 
 .submit-btn:hover {
@@ -1618,16 +1405,7 @@ html {
   box-shadow: 0 8px 20px rgba(0, 200, 255, 0.3);
 }
 
-.submit-btn:hover svg {
-  transform: translateX(4px);
-}
-
-.submit-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .contact-wrapper {
     grid-template-columns: 1fr;
@@ -1636,7 +1414,6 @@ html {
   
   .contact-link {
     padding: 14px 18px;
-    min-height: auto;
   }
   
   .contact-icon {
@@ -1644,26 +1421,8 @@ html {
     height: 44px;
   }
   
-  .contact-value {
-    font-size: 0.85rem;
-  }
-  
   .contact-form-wrapper {
-    padding: 0;
-  }
-  
-  .contact-form {
     padding: 24px;
-  }
-  
-  .form-group input {
-    min-height: auto;
-    padding: 14px 16px;
-  }
-  
-  .availability-badge {
-    font-size: 0.75rem;
-    padding: 10px 16px;
   }
 }
 
@@ -1683,42 +1442,31 @@ html {
     height: 20px;
   }
   
-  .contact-label {
-    font-size: 0.65rem;
-  }
-  
-  .contact-value {
-    font-size: 0.8rem;
-  }
-  
-  .contact-form {
+  .contact-form-wrapper {
     padding: 20px;
   }
-  
-  .submit-btn {
-    padding: 14px 24px;
-  }
-}
+}  
 
-
-/* ================================================
+  /* ================================================
    FOOTER - Centered
 ================================================ */
 footer {
   padding: 32px 10%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 12px;
   background: rgba(10, 15, 31, 0.6);
   backdrop-filter: blur(12px);
   border-top: 1px solid rgba(0, 150, 255, 0.15);
-  font-size: 0.85rem;
-  font-family: 'Space Grotesk', sans-serif;
   text-align: center;
 }
 
 footer span {
   color: var(--muted);
+  font-size: 0.85rem;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 footer .accent {
@@ -1734,7 +1482,6 @@ footer .avail {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-left: 12px;
 }
 
 footer .avail::before {
@@ -1761,28 +1508,11 @@ footer .avail::before {
 /* Responsive */
 @media (max-width: 768px) {
   footer {
-    flex-direction: column;
     padding: 24px 6%;
-    gap: 8px;
+    gap: 10px;
   }
   
-  footer .avail {
-    margin-left: 0;
+  footer span {
+    font-size: 0.75rem;
   }
 }
-/* ================================================
-   Continue with remaining sections...
-   (Keep the same styles but ensure all backgrounds
-   use the new blue color scheme)
-================================================ */
-
-/* Quick note: All sections should use the new blue-based backgrounds
-   Replace any black/dark gray backgrounds with:
-   - var(--bg) for main background
-   - var(--bg-alt) for alternate sections
-   - rgba(10, 15, 31, 0.6) for transparent sections
-*/
-
-/* The rest of your sections (Experience, Education, Contact, Footer)
-   will use the same blue-based colors. Just ensure any background colors
-   reference the new :root variables */
