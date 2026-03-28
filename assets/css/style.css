@@ -1516,3 +1516,20 @@ footer .avail::before {
     font-size: 0.75rem;
   }
 }
+
+/* ================================================
+   FORCE FIX - GIF ALWAYS VISIBLE
+================================================ */
+
+.project-image-wrapper img,
+.project-gif {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  transform: none !important;
+}
+
+.project-card:hover .project-image-wrapper img {
+  transform: scale(1.05) !important;
+  opacity: 1 !important;
+}
