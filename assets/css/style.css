@@ -233,13 +233,11 @@ nav.scrolled {
   pointer-events: none;
 }
 
-/* Avatar */
-.hero-right {
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-}
+/* ================================================
+   HERO AVATAR - With Image
+================================================ */
 
+/* Avatar Container */
 .avatar-ring {
   position: relative;
   width: 320px;
@@ -258,8 +256,19 @@ nav.scrolled {
   opacity: 0.5;
   filter: blur(20px);
   z-index: -1;
+  animation: rotate 4s linear infinite;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Avatar Placeholder - Now for Image */
 .avatar-placeholder {
   width: 300px;
   height: 300px;
@@ -270,11 +279,17 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 2px;
+  overflow: hidden;
   transition: all 0.4s ease;
+}
+
+/* Avatar Image */
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
 }
 
 .avatar-ring:hover .avatar-placeholder {
@@ -283,6 +298,34 @@ nav.scrolled {
   box-shadow: 0 0 40px var(--accent-glow);
 }
 
+.avatar-ring:hover .avatar-image {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .avatar-ring {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .avatar-placeholder {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar-ring {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .avatar-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+}
 /* Hero Content */
 .hero-left {
   max-width: 600px;
@@ -1654,6 +1697,77 @@ html {
   
   .submit-btn {
     padding: 14px 24px;
+  }
+}
+
+
+/* ================================================
+   FOOTER - Centered
+================================================ */
+footer {
+  padding: 32px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(10, 15, 31, 0.6);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0, 150, 255, 0.15);
+  font-size: 0.85rem;
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+}
+
+footer span {
+  color: var(--muted);
+}
+
+footer .accent {
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+footer .avail {
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+footer .avail::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    padding: 24px 6%;
+    gap: 8px;
+  }
+  
+  footer .avail {
+    margin-left: 0;
   }
 }
 /* ================================================
