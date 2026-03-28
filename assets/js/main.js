@@ -176,3 +176,88 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
   });
 });
+
+// ================================================
+// Navigation Functions for Buttons
+// ================================================
+
+// Smooth scroll function
+function smoothScrollToSection(sectionId, offset = 80) {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// View My Work button - scroll to projects section
+function viewMyWork() {
+  smoothScrollToSection('projects', 80);
+}
+
+// Get In Touch button - scroll to contact section
+function getInTouch() {
+  smoothScrollToSection('contact', 80);
+}
+
+// Scroll to section function for navigation links
+function scrollToSection(sectionId) {
+  smoothScrollToSection(sectionId, 70);
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Add click handlers to buttons
+  const viewWorkBtn = document.querySelector('.btn-primary');
+  const getInTouchBtn = document.querySelector('.btn-outline');
+  
+  if (viewWorkBtn) {
+    viewWorkBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollToSection('projects', 80);
+    });
+  }
+  
+  if (getInTouchBtn) {
+    getInTouchBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollToSection('contact', 80);
+    });
+  }
+  
+  // Also handle any other buttons that might have onclick attributes
+  window.viewMyWork = viewMyWork;
+  window.getInTouch = getInTouch;
+  window.scrollToSection = scrollToSection;
+  
+  // Add click handlers to all navigation links
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      smoothScrollToSection(targetId, 70);
+      
+      // Close mobile menu if open
+      const navLinksContainer = document.getElementById('navLinks');
+      if (navLinksContainer && navLinksContainer.classList.contains('open')) {
+        navLinksContainer.classList.remove('open');
+        const navToggle = document.getElementById('navToggle');
+        if (navToggle) {
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
+});
+
+// Export functions for global use
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { smoothScrollToSection, viewMyWork, getInTouch, scrollToSection };
+}
