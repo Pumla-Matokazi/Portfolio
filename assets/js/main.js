@@ -261,3 +261,40 @@ document.addEventListener('DOMContentLoaded', function() {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { smoothScrollToSection, viewMyWork, getInTouch, scrollToSection };
 }
+
+// ================================================
+// Slideshow Animation for Project Images
+// ================================================
+
+// Slideshow Function
+function startSlideshow(containerId, images, interval = 3000) {
+  let currentIndex = 0;
+  
+  function showNextImage() {
+    // Hide all images
+    images.forEach(img => {
+      img.classList.remove('active');
+    });
+    
+    // Move to next image
+    currentIndex = (currentIndex + 1) % images.length;
+    
+    // Show current image
+    images[currentIndex].classList.add('active');
+  }
+  
+  // Start the slideshow
+  setInterval(showNextImage, interval);
+}
+
+// Start slideshow when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all images in the slideshow
+  const slideshowContainer = document.querySelector('.slideshow-container');
+  if (slideshowContainer) {
+    const images = slideshowContainer.querySelectorAll('.slide-img');
+    if (images.length > 1) {
+      startSlideshow('slideshow', images, 3000);
+    }
+  }
+});
