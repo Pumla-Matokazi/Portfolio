@@ -1533,3 +1533,661 @@ footer .avail::before {
   transform: scale(1.05) !important;
   opacity: 1 !important;
 }
+
+/* ================================================
+   FIX FOR SEPARATE PAGES
+================================================ */
+
+/* Make each section fill the page properly */
+#skills, #projects, #experience, #education, #contact {
+  min-height: calc(100vh - 80px);
+  padding: 100px 10%;
+}
+
+/* Remove any conflicting animations that might hide content */
+.project-image-wrapper img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Fix for scroll position on page load */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Active navigation link styling */
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+/* ================================================
+   EDUCATION CARD — Full redesign
+================================================ */
+.edu-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 150, 255, 0.2);
+  border-radius: 20px;
+  padding: 32px 36px;
+  transition: border-color 0.3s;
+}
+.edu-card:hover { border-color: rgba(0, 200, 255, 0.4); }
+
+.edu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.edu-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.edu-meta {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.3px;
+}
+.edu-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: rgba(0, 200, 255, 0.08);
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  color: var(--accent);
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.5px;
+}
+.edu-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-top: 20px;
+}
+.edu-divider {
+  height: 1px;
+  background: rgba(0, 150, 255, 0.15);
+  margin: 28px 0;
+}
+.edu-section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 18px;
+}
+
+/* Modules grid */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.module-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 150, 255, 0.15);
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.module-card:hover {
+  border-color: rgba(0, 200, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+.module-num {
+  font-size: 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+.module-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.module-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.module-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.mtag {
+  font-size: 0.62rem;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: rgba(0, 200, 255, 0.06);
+  border: 1px solid rgba(0, 200, 255, 0.18);
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Project highlights */
+.edu-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.edu-project { display: flex; gap: 16px; align-items: flex-start; }
+.proj-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 6px;
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.5);
+}
+.proj-content { flex: 1; }
+.proj-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.proj-desc {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* And more row */
+.proj-more {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 150, 255, 0.12);
+}
+.proj-more-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 150, 255, 0.3), transparent);
+}
+.proj-more span {
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--muted-light);
+  white-space: nowrap;
+}
+
+/* Education skill tags */
+.edu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.edu-tag {
+  font-size: 0.72rem;
+  padding: 5px 13px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 150, 255, 0.2);
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: default;
+}
+.edu-tag:hover { border-color: rgba(0, 200, 255, 0.4); color: var(--text); }
+.edu-tag.highlight {
+  background: rgba(0, 200, 255, 0.08);
+  border-color: rgba(0, 200, 255, 0.35);
+  color: var(--accent);
+}
+
+/* Outcome block */
+.edu-outcome {
+  background: rgba(0, 200, 255, 0.05);
+  border-radius: 12px;
+  padding: 18px 22px;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.85;
+  border-left: 2px solid var(--accent);
+}
+.edu-outcome strong { color: var(--text); font-weight: 600; }
+
+/* ================================================
+   SKILLS — flip card rows (tech-stack page)
+================================================ */
+.skills-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.skill-row {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0, 150, 255, 0.12);
+}
+.skill-row:last-child { border-bottom: none; }
+.skill-row-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.skill-row-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 150, 255, 0.15);
+}
+.skill-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Flip cards */
+.flip-card { width: 68px; height: 68px; perspective: 650px; cursor: pointer; }
+.flip-inner {
+  width: 100%; height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.flip-card:hover .flip-inner { transform: rotateY(180deg); }
+.flip-front,
+.flip-back {
+  position: absolute; inset: 0;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px;
+  border: 1px solid rgba(0, 150, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+.flip-front img { width: 30px; height: 30px; object-fit: contain; }
+.flip-back {
+  transform: rotateY(180deg);
+  background: #085041;
+  border-color: #0F6E56;
+}
+.flip-back span {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #9FE1CB;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 5px;
+  font-weight: 500;
+}
+
+/* ================================================
+   SCROLL TOP + TOAST + FADE
+================================================ */
+#scrollTop {
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--accent); border: none; border-radius: 50%;
+  color: #0a0f1f; font-size: 1.1rem;
+  display: none; align-items: center; justify-content: center;
+  z-index: 999; font-weight: 700; cursor: pointer; transition: all 0.2s;
+}
+#scrollTop:hover { background: #22d4ff; transform: translateY(-3px); }
+#scrollTop.visible { display: flex; }
+
+#toast {
+  position: fixed; bottom: 2rem; left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: rgba(17, 20, 32, 0.95);
+  border-radius: 10px; font-size: 0.85rem;
+  z-index: 9999; transition: transform 0.35s ease;
+  pointer-events: none; white-space: nowrap; padding: 14px 28px;
+}
+#toast.success { border: 1px solid rgba(0, 255, 153, 0.35); color: var(--green); }
+#toast.error   { border: 1px solid rgba(255, 80, 80, 0.35); color: #ff6b6b; }
+#toast.show    { transform: translateX(-50%) translateY(0); }
+
+.fade-hidden  { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-visible { opacity: 1; transform: none; }
+
+/* ================================================
+   RESPONSIVE — education & skills
+================================================ */
+@media (max-width: 700px) {
+  .modules-grid { grid-template-columns: 1fr; }
+  .edu-card { padding: 22px 18px; }
+  .flip-card { width: 58px; height: 58px; }
+  .flip-front img { width: 26px; height: 26px; }
+}
+
+/* ================================================
+   DECORATED CONTACT SECTION
+================================================ */
+
+#contact {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background for contact section */
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(0, 200, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Contact cards animation */
+.contact-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 200, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.contact-link:hover::before {
+  left: 100%;
+}
+
+/* Icon pulse animation */
+.contact-icon {
+  position: relative;
+}
+
+.contact-link:hover .contact-icon {
+  animation: iconPulse 0.5s ease;
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Form input glow effect */
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.2), 0 0 0 5px rgba(0, 200, 255, 0.1);
+}
+
+/* Submit button animation */
+.submit-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.submit-btn:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* Floating decoration dots */
+.contact-container {
+  position: relative;
+}
+
+.contact-container::before,
+.contact-container::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.03), transparent);
+  pointer-events: none;
+}
+
+.contact-container::before {
+  top: -50px;
+  right: -50px;
+}
+
+.contact-container::after {
+  bottom: -50px;
+  left: -50px;
+}
+
+/* Gradient border on form */
+.contact-form-wrapper {
+  position: relative;
+}
+
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--accent), var(--secondary), transparent);
+  border-radius: 26px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact-form-wrapper:hover::before {
+  opacity: 1;
+}
+
+
+/* ================================================
+   CONTACT SECTION - ORIGINAL CLEAN VERSION
+================================================ */
+
+#contact {
+  padding: 80px 10%;
+  position: relative;
+  background: rgba(10, 15, 31, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#contact h2 {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.contact-info p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 150, 255, 0.2);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 200, 255, 0.1);
+  border-radius: 12px;
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent);
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: rgba(0, 255, 170, 0.08);
+  border: 1px solid rgba(0, 255, 170, 0.2);
+  border-radius: 40px;
+  font-size: 0.85rem;
+  color: var(--green);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 150, 255, 0.2);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(10, 15, 31, 0.6);
+  border: 1px solid rgba(0, 150, 255, 0.2);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  border: none;
+  border-radius: 40px;
+  color: #0a0f1f;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 200, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+

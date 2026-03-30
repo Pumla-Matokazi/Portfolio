@@ -1,57 +1,67 @@
 /* ================================================
-   Pumla Matokazi — Portfolio JavaScript (Improved)
+   Pumla Matokazi — Portfolio JavaScript
    ================================================ */
 
 /* ============================================================
-   EMAILJS SETUP — Follow these 3 steps to activate the form:
-   ---------------------------------------------------------------
+   EMAILJS SETUP
    1. Go to https://www.emailjs.com and create a free account
-   2. Add an Email Service (Gmail works great) → copy the Service ID
-   3. Create an Email Template with these variables:
-        {{from_name}}   {{from_email}}   {{message}}
-      Copy the Template ID
-   4. Go to Account → API Keys → copy your Public Key
-   5. Replace the three placeholder strings below with your real IDs
+   2. Add an Email Service (Gmail) → copy the Service ID
+   3. Create an Email Template with: {{from_name}} {{from_email}} {{message}}
+   4. Copy the Template ID
+   5. Go to Account → API Keys → copy your Public Key
+   6. Replace the three placeholder strings below
    ============================================================ */
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';     // e.g. 'abc123XYZ'
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';     // e.g. 'service_xxxxxxx'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';    // e.g. 'template_xxxxxxx'
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
 
-// Initialise EmailJS
 if (typeof emailjs !== 'undefined') {
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 }
 
-/* ---- Smooth scroll helper ---- */
-function scrollTo(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
-
-/* ---- Nav: shrink on scroll + mobile toggle ---- */
+/* ---- Nav: shrink on scroll ---- */
 const navbar    = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+}
+
+/* ---- Mobile nav toggle ---- */
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // Close menu when a nav link is clicked
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+}
+
+/* ---- Highlight active nav link based on current page ---- */
+document.addEventListener('DOMContentLoaded', function () {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+      link.classList.add('active');
+    }
+  });
 });
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-/* ---- Scroll-to-top ---- */
+/* ---- Scroll-to-top button ---- */
 const scrollTopBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-  scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-});
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+}
 
-/* ---- Typewriter effect in hero ---- */
+/* ---- Typewriter effect (hero only) ---- */
 const typedEl = document.querySelector('.typed-text');
 const phrases = ['work & scale.', 'solve real problems.', 'run on the cloud.', 'matter.'];
 let phraseIdx = 0, charIdx = 0, deleting = false;
@@ -59,7 +69,6 @@ let phraseIdx = 0, charIdx = 0, deleting = false;
 function typeWriter() {
   if (!typedEl) return;
   const current = phrases[phraseIdx];
-
   if (!deleting) {
     typedEl.textContent = current.slice(0, charIdx + 1);
     charIdx++;
@@ -80,20 +89,6 @@ function typeWriter() {
 }
 typeWriter();
 
-/* ---- Animate Skill Bars on Scroll ---- */
-const skillSpans = document.querySelectorAll('.skill span');
-
-function animateSkills() {
-  const triggerPoint = window.innerHeight * 0.88;
-  skillSpans.forEach(span => {
-    if (span.getBoundingClientRect().top < triggerPoint) {
-      span.style.width = '100%';
-    }
-  });
-}
-window.addEventListener('scroll', animateSkills);
-window.addEventListener('load', animateSkills);
-
 /* ---- Hover-play GIFs for Project Cards ---- */
 document.querySelectorAll('.project-card').forEach(card => {
   const img = card.querySelector('.project-gif');
@@ -105,9 +100,9 @@ document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mouseleave', () => { if (staticSrc) img.src = staticSrc; });
 });
 
-/* ---- Fade-in sections on scroll ---- */
+/* ---- Fade-in on scroll ---- */
 const fadeEls = document.querySelectorAll(
-  '.project-card, .timeline-item, .about-text, .skills-wrap, .contact-left, .contact-form-wrap'
+  '.project-card, .timeline-item, .contact-info, .contact-form-wrapper, .edu-card, .module-card'
 );
 const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -117,11 +112,15 @@ const fadeObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.1 });
-fadeEls.forEach(el => { el.classList.add('fade-hidden'); fadeObserver.observe(el); });
+fadeEls.forEach(el => {
+  el.classList.add('fade-hidden');
+  fadeObserver.observe(el);
+});
 
 /* ---- Toast helper ---- */
 const toast = document.getElementById('toast');
 function showToast(msg, type = 'success') {
+  if (!toast) return;
   toast.textContent = msg;
   toast.className = `show ${type}`;
   setTimeout(() => { toast.className = type; }, 4000);
@@ -130,23 +129,18 @@ function showToast(msg, type = 'success') {
 /* ---- Contact form with EmailJS ---- */
 const contactForm = document.getElementById('contactForm');
 const submitBtn   = document.getElementById('submitBtn');
-const btnText     = document.getElementById('btnText');
-const btnLoading  = document.getElementById('btnLoading');
 
-if (contactForm) {
+if (contactForm && submitBtn) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // If keys aren't set yet, let the user know
     if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
       showToast('⚠ EmailJS not configured yet — see main.js setup notes.', 'error');
       return;
     }
 
-    // Loading state
     submitBtn.disabled = true;
-    btnText.style.display    = 'none';
-    btnLoading.style.display = 'inline';
+    submitBtn.textContent = 'Sending…';
 
     const templateParams = {
       from_name:  document.getElementById('from_name').value.trim(),
@@ -156,145 +150,27 @@ if (contactForm) {
 
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
-      showToast('Message sent! I\'ll get back to you soon. ✓', 'success');
+      showToast("Message sent! I'll get back to you soon. ✓", 'success');
       contactForm.reset();
     } catch (err) {
       console.error('EmailJS error:', err);
       showToast('Something went wrong. Please email me directly. ✗', 'error');
     } finally {
       submitBtn.disabled = false;
-      btnText.style.display    = 'inline';
-      btnLoading.style.display = 'none';
+      submitBtn.textContent = 'Send Message';
     }
   });
 }
 
-/* ---- Smooth scroll for anchor links ---- */
+/* ---- Smooth scroll for same-page anchor links (#contact) ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
-
-// ================================================
-// Navigation Functions for Buttons
-// ================================================
-
-// Smooth scroll function
-function smoothScrollToSection(sectionId, offset = 80) {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-    
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-  }
-}
-
-// View My Work button - scroll to projects section
-function viewMyWork() {
-  smoothScrollToSection('projects', 80);
-}
-
-// Get In Touch button - scroll to contact section
-function getInTouch() {
-  smoothScrollToSection('contact', 80);
-}
-
-// Scroll to section function for navigation links
-function scrollToSection(sectionId) {
-  smoothScrollToSection(sectionId, 70);
-}
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  
-  // Add click handlers to buttons
-  const viewWorkBtn = document.querySelector('.btn-primary');
-  const getInTouchBtn = document.querySelector('.btn-outline');
-  
-  if (viewWorkBtn) {
-    viewWorkBtn.addEventListener('click', function(e) {
+    if (target) {
       e.preventDefault();
-      smoothScrollToSection('projects', 80);
-    });
-  }
-  
-  if (getInTouchBtn) {
-    getInTouchBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      smoothScrollToSection('contact', 80);
-    });
-  }
-  
-  // Also handle any other buttons that might have onclick attributes
-  window.viewMyWork = viewMyWork;
-  window.getInTouch = getInTouch;
-  window.scrollToSection = scrollToSection;
-  
-  // Add click handlers to all navigation links
-  const navLinks = document.querySelectorAll('.nav-links a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      smoothScrollToSection(targetId, 70);
-      
-      // Close mobile menu if open
-      const navLinksContainer = document.getElementById('navLinks');
-      if (navLinksContainer && navLinksContainer.classList.contains('open')) {
-        navLinksContainer.classList.remove('open');
-        const navToggle = document.getElementById('navToggle');
-        if (navToggle) {
-          navToggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
-  });
-});
-
-// Export functions for global use
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { smoothScrollToSection, viewMyWork, getInTouch, scrollToSection };
-}
-
-// ================================================
-// Slideshow Animation for Project Images
-// ================================================
-
-// Slideshow Function
-function startSlideshow(containerId, images, interval = 3000) {
-  let currentIndex = 0;
-  
-  function showNextImage() {
-    // Hide all images
-    images.forEach(img => {
-      img.classList.remove('active');
-    });
-    
-    // Move to next image
-    currentIndex = (currentIndex + 1) % images.length;
-    
-    // Show current image
-    images[currentIndex].classList.add('active');
-  }
-  
-  // Start the slideshow
-  setInterval(showNextImage, interval);
-}
-
-// Start slideshow when page loads
-document.addEventListener('DOMContentLoaded', function() {
-  // Get all images in the slideshow
-  const slideshowContainer = document.querySelector('.slideshow-container');
-  if (slideshowContainer) {
-    const images = slideshowContainer.querySelectorAll('.slide-img');
-    if (images.length > 1) {
-      startSlideshow('slideshow', images, 3000);
+      target.scrollIntoView({ behavior: 'smooth' });
+      // close mobile menu if open
+      if (navLinks) navLinks.classList.remove('open');
     }
-  }
+  });
 });
