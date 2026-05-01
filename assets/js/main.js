@@ -165,12 +165,41 @@ if (contactForm && submitBtn) {
 /* ---- Smooth scroll for same-page anchor links (#contact) ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-      // close mobile menu if open
-      if (navLinks) navLinks.classList.remove('open');
+    const href = a.getAttribute('href');
+    
+    // ONLY run this if the link is JUST a hash (like #contact)
+    // AND it's not an empty hash (#)
+    if (href !== "#" && href.startsWith("#")) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        // close mobile menu if open
+        if (navLinks) navLinks.classList.remove('open');
+      }
     }
   });
 });
+
+/* ----Loading the AI "Brain" using a CDN so the app stays lightweight and fast  ---- */
+/*
+
+import { FaceLandmarker, FilesetResolver } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
+
+async function setupLiveness() {
+  const vision = await FilesetResolver.forVisionTasks(
+    "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
+  );
+  
+  const faceLandmarker = await FaceLandmarker.createFromOptions(vision, {
+    baseOptions: {
+      modelAssetPath: `https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task`,
+      delegate: "GPU"
+    },
+    runningMode: "VIDEO",
+    numFaces: 1
+  });
+  
+  console.log("Liveness AI is ready! 🛡️");
+}
+*/
